@@ -1,0 +1,204 @@
+1.Student Management System (ArrayList + OOP)
+
+import java.util.*;
+
+class Student {
+    int id;
+    String name;
+
+    Student(int id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+
+    public String toString() {
+        return "ID: " + id + ", Name: " + name;
+    }
+}
+
+public class StudentManagement {
+    public static void main(String[] args) {
+        ArrayList<Student> students = new ArrayList<>();
+
+        students.add(new Student(101, "Praveen"));
+        students.add(new Student(102, "Kumar"));
+
+        for(Student s : students) {
+            System.out.println(s);
+        }
+    }
+}
+
+2. Bank Management System
+
+class BankAccount {
+    String name;
+    double balance;
+
+    BankAccount(String name, double balance) {
+        this.name = name;
+        this.balance = balance;
+    }
+
+    void deposit(double amount) {
+        balance += amount;
+    }
+
+    void withdraw(double amount) {
+        if(amount <= balance)
+            balance -= amount;
+    }
+
+    void display() {
+        System.out.println("Name: " + name);
+        System.out.println("Balance: " + balance);
+    }
+}
+
+public class BankDemo {
+    public static void main(String[] args) {
+        BankAccount acc = new BankAccount("Praveen", 10000);
+
+        acc.deposit(5000);
+        acc.withdraw(2000);
+        acc.display();
+    }
+}
+
+3. Library Management System
+
+import java.util.*;
+
+public class Library {
+    public static void main(String[] args) {
+        ArrayList<String> books = new ArrayList<>();
+
+        books.add("Java");
+        books.add("Python");
+        books.add("SQL");
+
+        System.out.println("Books: " + books);
+
+        books.remove("Python");
+
+        System.out.println("After Issue: " + books);
+    }
+}
+
+4.Employee Payroll System
+
+class Employee {
+    int id;
+    String name;
+    double salary;
+
+    Employee(int id, String name, double salary) {
+        this.id = id;
+        this.name = name;
+        this.salary = salary;
+    }
+
+    double calculateAnnualSalary() {
+        return salary * 12;
+    }
+}
+
+public class Payroll {
+    public static void main(String[] args) {
+        Employee e = new Employee(1, "Praveen", 30000);
+
+        System.out.println("Annual Salary: " + e.calculateAnnualSalary());
+    }
+}
+
+5.ATM Simulation (CRT/Placement Level)
+
+import java.util.Scanner;
+
+public class ATM {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        double balance = 10000;
+
+        System.out.println("1.Deposit 2.Withdraw 3.Balance");
+        int choice = sc.nextInt();
+
+        switch(choice) {
+            case 1:
+                System.out.print("Amount: ");
+                balance += sc.nextDouble();
+                break;
+
+            case 2:
+                System.out.print("Amount: ");
+                double amt = sc.nextDouble();
+                if(amt <= balance)
+                    balance -= amt;
+                else
+                    System.out.println("Insufficient Balance");
+                break;
+
+            case 3:
+                System.out.println("Balance: " + balance);
+                break;
+        }
+
+        System.out.println("Final Balance: " + balance);
+    }
+}
+
+6.anagram
+
+import java.util.Arrays;
+
+public class Anagram {
+    public static void main(String[] args) {
+        String str1 = "listen";
+        String str2 = "silent";
+
+        str1 = str1.toLowerCase();
+        str2 = str2.toLowerCase();
+
+        char[] a = str1.toCharArray();
+        char[] b = str2.toCharArray();
+
+        Arrays.sort(a);
+        Arrays.sort(b);
+
+        if (Arrays.equals(a, b))
+            System.out.println("Anagram");
+        else
+            System.out.println("Not Anagram");
+    }
+}
+
+7.reverse string
+
+public class ReverseString {
+    public static void main(String[] args) {
+        String str = "Java";
+        String rev = "";
+
+        for (int i = str.length() - 1; i >= 0; i--) {
+            rev += str.charAt(i);
+        }
+
+        System.out.println("Original String: " + str);
+        System.out.println("Reversed String: " + rev);
+    }
+}
+
+8.string to array
+
+public class StringToArray {
+    public static void main(String[] args) {
+        String str = "Java";
+
+        char[] arr = str.toCharArray();
+
+        for (char ch : arr) {
+            System.out.println(ch);
+        }
+    }
+}
