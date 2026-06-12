@@ -25,3 +25,97 @@ public class Swap {
         System.out.println("b = " + b);
     }
 }
+import java.util.Arrays;
+
+public class AllPrograms {
+    public static void main(String[] args) {
+
+        // 1. Factorial
+        int n = 5;
+        int fact = 1;
+        for (int i = 1; i <= n; i++) {
+            fact *= i;
+        }
+        System.out.println("Factorial of " + n + " = " + fact);
+
+        // 2. Fibonacci Series
+        int a = 0, b = 1;
+        System.out.print("Fibonacci Series: ");
+        for (int i = 1; i <= 10; i++) {
+            System.out.print(a + " ");
+            int c = a + b;
+            a = b;
+            b = c;
+        }
+        System.out.println();
+
+        // 3. Prime Number
+        int primeNum = 13;
+        boolean isPrime = true;
+        for (int i = 2; i <= primeNum / 2; i++) {
+            if (primeNum % i == 0) {
+                isPrime = false;
+                break;
+            }
+        }
+        System.out.println(primeNum + (isPrime ? " is Prime" : " is Not Prime"));
+
+        // 4. Palindrome Number
+        int num = 121;
+        int temp = num, rev = 0;
+        while (temp > 0) {
+            rev = rev * 10 + temp % 10;
+            temp /= 10;
+        }
+        System.out.println(num + (num == rev ? " is Palindrome" : " is Not Palindrome"));
+
+        // 5. Armstrong Number
+        int arm = 153;
+        int sum = 0, t = arm;
+        while (t > 0) {
+            int digit = t % 10;
+            sum += digit * digit * digit;
+            t /= 10;
+        }
+        System.out.println(arm + (sum == arm ? " is Armstrong" : " is Not Armstrong"));
+
+        // 6. Reverse String
+        String str = "Java";
+        String reverse = "";
+        for (int i = str.length() - 1; i >= 0; i--) {
+            reverse += str.charAt(i);
+        }
+        System.out.println("Reversed String: " + reverse);
+
+        // 7. Count Vowels
+        String text = "Hello World";
+        int vowelCount = 0;
+        text = text.toLowerCase();
+
+        for (int i = 0; i < text.length(); i++) {
+            char ch = text.charAt(i);
+            if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u') {
+                vowelCount++;
+            }
+        }
+        System.out.println("Vowel Count: " + vowelCount);
+
+        // 8. Largest Element in Array
+        int arr[] = {10, 50, 20, 80, 30};
+        int largest = arr[0];
+
+        for (int i = 1; i < arr.length; i++) {
+            if (arr[i] > largest) {
+                largest = arr[i];
+            }
+        }
+        System.out.println("Largest Element: " + largest);
+
+        // 9. Sorting Array
+        int numbers[] = {50, 20, 80, 10, 30};
+
+        Arrays.sort(numbers);
+
+        System.out.println("Sorted Array: " + Arrays.toString(numbers));
+    }
+}
