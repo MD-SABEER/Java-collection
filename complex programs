@@ -202,3 +202,42 @@ public class StringToArray {
         }
     }
 }
+
+9.array list
+
+import java.util.ArrayList;
+
+public class ArrayListDemo {
+    public static void main(String[] args) {
+
+        ArrayList<String> list = new ArrayList<>();
+
+        // Add elements
+        list.add("Java");
+        list.add("Python");
+        list.add("C++");
+
+        System.out.println("Original List: " + list);
+
+        // Get element
+        System.out.println("Element at index 1: " + list.get(1));
+
+        // Set element
+        list.set(1, "SQL");
+        System.out.println("After Set: " + list);
+
+        // Remove element
+        list.remove("C++");
+        System.out.println("After Remove: " + list);
+
+        // Check element
+        System.out.println("Contains Java? " + list.contains("Java"));
+
+        // Display using loop
+        System.out.println("Elements:");
+        for (String s : list) {
+            System.out.println(s);
+        }
+    }
+}
+
