@@ -1,0 +1,27 @@
+1. Hello World
+public class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello World");
+    }
+}
+2.Add Two Numbers
+public class AddNumbers {
+    public static void main(String[] args) {
+        int a = 10, b = 20;
+        int sum = a + b;
+        System.out.println("Sum = " + sum);
+    }
+}
+3.Swap Two Numbers (Without Temp)
+public class Swap {
+    public static void main(String[] args) {
+        int a = 10, b = 20;
+
+        a = a + b;
+        b = a - b;
+        a = a - b;
+
+        System.out.println("a = " + a);
+        System.out.println("b = " + b);
+    }
+}
